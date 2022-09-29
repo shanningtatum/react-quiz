@@ -1,7 +1,9 @@
 import "./App.css";
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Main from "./components/Main";
+import Quiz from "./components/Quiz";
+import Leaderboard from "./components/Leaderboard";
 import Footer from "./components/Footer";
 
 function App() {
@@ -9,13 +11,13 @@ function App() {
     <>
       <div className="App">
         <Header />
-        <Main />
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/quiz" element={<Quiz />} />
+          <Route path="/leaderboard" element={<Leaderboard />} />
+        </Routes>
         <Footer />
       </div>
-
-      <Routes>
-        <Route></Route>
-      </Routes>
     </>
   );
 }
